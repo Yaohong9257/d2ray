@@ -3,6 +3,7 @@ FROM alpine:latest
 ENV VER_XRAY 1.7.5
 ENV VER_SO 2.5.20
 ENV VER_NG 1.7.38
+ENV VER_V2RAYXS 1.5.7
 
 # install packages
 RUN set -xe && apk add --no-cache unzip wget nginx certbot openssl python3 py3-jinja2 supervisor apache2-utils bash
@@ -16,6 +17,9 @@ RUN set -xe && \
     wget -P /downloads/android https://github.com/2dust/v2rayNG/releases/download/$VER_NG/v2rayNG_"$VER_NG"_arm64-v8a.apk && \
     wget -P /downloads/others https://github.com/XTLS/Xray-core/releases/download/v$VER_XRAY/Xray-macos-64.zip && \
     wget -P /downloads/others https://github.com/XTLS/Xray-core/releases/download/v$VER_XRAY/Xray-macos-arm64-v8a.zip
+    wget -P /downloads/others https://github.com/tzmax/V2RayXS/releases/download/v$VER_V2RAYXS/V2RayXS_x86_64.app.zip
+    wget -P /downloads/others https://github.com/tzmax/V2RayXS/releases/download/v$VER_V2RAYXS/V2RayXS_arm64.app.zip
+
 
 COPY ./opt /opt/
 
