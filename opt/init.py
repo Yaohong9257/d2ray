@@ -101,7 +101,7 @@ jinja_dict["PORT"] = str(port)
 jinja_dict["FQDN"] = str(fqdn)
 jinja_dict["NGINX_LOCATIONS"] = build_nginx_locations(users)
 
-print(f"jinja_dict:" flush=True)
+print(f"jinja_dict:", flush=True)
 print(jinja_dict, flush=True)
 
 print(f"Processing Xray config files...", flush=True)
