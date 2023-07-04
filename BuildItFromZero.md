@@ -14,7 +14,7 @@ https://www.namesilo.com/account_domain_manage_dns.php
 
 Select the resource record type you want to create: A
 
-for example: vvv.trymediationg.top to  
+For example: vvv.example.com to <your server ip>
 
 3.install docker on google cloud vps
 
@@ -121,7 +121,6 @@ git clone https://github.com/Yaohong9257/d2ray.git
 ## vim .env
 
 generate uuid by run `uuidgen` on macos
-
 ```
 PORT=32368
 FQDN=vvv.example.com
@@ -129,9 +128,17 @@ USERS=UUID1,UUID2@xtls-rprx-vision,UUID3@xtls-rprx-direct
 LOGDIR=./logs
 ```
 
-## start docker contianer
+## build & start docker contianer
 
-run `docker compose up -d`
+build from local Dockerfile:
+```
+docker build --no-cache -t d2ray .
+```
+
+start docker by runing:
+```
+docker compose up -d
+```
 
 
 
