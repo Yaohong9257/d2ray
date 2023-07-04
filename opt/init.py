@@ -101,11 +101,15 @@ jinja_dict["PORT"] = str(port)
 jinja_dict["FQDN"] = str(fqdn)
 jinja_dict["NGINX_LOCATIONS"] = build_nginx_locations(users)
 
+print(f"jinja_dict:" flush=True)
+print(jinja_dict, flush=True)
+
 print(f"Processing Xray config files...", flush=True)
 process_directory("/opt/xray", jinja_dict)
 
 print(f"Processing Nginx config files...", flush=True)
 process_directory("/opt/nginx", jinja_dict)
+
 
 for u in users:
     print(f"Preparing directory for user {u[0]}...", flush=True)
@@ -115,6 +119,8 @@ for u in users:
 
     jinja_dict["USER"] = u[0]
     jinja_dict["FLOW"] = u[1]
+    print(f"Processing {user_dir} files...", flush=True)
+    print(f"Processing current jinja_dict:{jinja_dict}", flush=True)
     process_directory(user_dir, jinja_dict)
     subprocess.check_call(f"ln -sf /downloads/others {user_dir}/others/downloads", shell=True)
     subprocess.check_call(f"ln -sf /downloads/android {user_dir}/android/downloads", shell=True)
