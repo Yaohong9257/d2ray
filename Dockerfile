@@ -16,9 +16,9 @@ RUN set -xe && \
     wget -P /downloads/others https://github.com/FelisCatus/SwitchyOmega/releases/download/v$VER_SO/SwitchyOmega_Chromium.crx && \
     wget -P /downloads/android https://github.com/2dust/v2rayNG/releases/download/$VER_NG/v2rayNG_"$VER_NG"_arm64-v8a.apk && \
     wget -P /downloads/others https://github.com/XTLS/Xray-core/releases/download/v$VER_XRAY/Xray-macos-64.zip && \
-    wget -P /downloads/others https://github.com/XTLS/Xray-core/releases/download/v$VER_XRAY/Xray-macos-arm64-v8a.zip
-    wget -P /downloads/others https://github.com/tzmax/V2RayXS/releases/download/v$VER_V2RAYXS/V2RayXS_x86_64.app.zip
-    wget -P /downloads/others https://github.com/tzmax/V2RayXS/releases/download/v$VER_V2RAYXS/V2RayXS_arm64.app.zip
+    wget -P /downloads/others https://github.com/XTLS/Xray-core/releases/download/v$VER_XRAY/Xray-macos-arm64-v8a.zip \
+    wget -P /downloads/others https://github.com/tzmax/V2RayXS/releases/download/v$VER_V2RAYXS/V2RayXS_x86_64.app.zip \
+    wget -P /downloads/others https://github.com/tzmax/V2RayXS/releases/download/v$VER_V2RAYXS/V2RayXS_arm64.app.zip 
 
 
 COPY ./opt /opt/
